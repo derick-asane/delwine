@@ -4,7 +4,7 @@ const SearchBar = ({ searchTerm, setSearchTerm }) => {
   };
 
   return (
-    <div className="w-[50%] h-[60px] bg-white flex justify-center items-center mx-auto mt-4 gap-1 border-4 rounded-xl shadow-slate-300 mb-4">
+    <div className="w-[65%] h-[60px] bg-white flex justify-center items-center mt-4 gap-1 border-4 rounded-xl shadow-slate-300 mb-4">
       <input
         type="text"
         placeholder="Search drink here ..."

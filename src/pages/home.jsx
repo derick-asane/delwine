@@ -3,7 +3,7 @@ import mycherry from "/src/assets/img/cherry.svg";
 const Home = () => {
   return (
     <div className="relative min-h-screen">
-      <div className="absolute  inset-0  w-[100%] flex flex-col md:flex-row justify-center items-center  gap-4">
+      <div className="md:absolute  inset-0  w-[100%] flex flex-col md:flex-row justify-center items-center  gap-4">
         <div className="w-[100%] md:w-[40%] ">
           <img src={mycherry} alt="" />
         </div>

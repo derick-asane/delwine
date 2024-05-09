@@ -3,9 +3,11 @@ import productService from "../services/productService";
 import SearchBar from "../components/searchbar";
 import { getProducts } from "../app/productSlice";
 import { useDispatch, useSelector } from "react-redux";
+import AddProduct from "./addproduct";
 
 const Products = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [isFormOpen, SetIsFormOpen] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -29,12 +31,37 @@ const Products = () => {
     product.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  useEffect(() => {
+    if (isFormOpen) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+    console.log(isFormOpen);
+  }, [isFormOpen]);
+
+  const openForm = () => {
+    SetIsFormOpen(true);
+  };
+
+  const closeForm = () => {
+    SetIsFormOpen(false);
+  };
+
   return (
-    <div>
+    <div className="relative">
       <div className="w-full flex justify-center">
         <h1 className="italic">List of drinks</h1>
       </div>
-      <SearchBar setSearchTerm={setSearchTerm} searchTerm={searchTerm} />
+      <div className="flex w-full items-center ">
+        <div className="w-3/4 flex justify-end">
+          <SearchBar setSearchTerm={setSearchTerm} searchTerm={searchTerm} />
+        </div>
+        <div className="w-1/4 flex justify-end mr-4">
+          <button onClick={openForm}>Add Product</button>
+        </div>
+      </div>
+
       <div className="flex flex-wrap mx-4">
         {filteredProducts.map((product) => (
           <div
@@ -59,6 +86,11 @@ const Products = () => {
           </div>
         ))}
       </div>
+      {isFormOpen && (
+        <div className="absolute top-0 left-0 w-screen h-screen flex justify-center items-center bg-slate-100 bg-opacity-50">
+          <AddProduct closeForm={closeForm} />
+        </div>
+      )}
     </div>
   );
 };
