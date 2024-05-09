@@ -9,7 +9,7 @@ const Home = () => {
         </div>
         <div className="w-[100%] md:w-[40%]  p-2">
           <span className="text-[20px] font-bold md:text-[30px] lg:text-[40px] xl:text-[50px] ">
-            Best quality products
+            Best quality drinks
           </span>
           <div className="text-[20px] md:text-[20px] lg:text-[30px]">
             <span>

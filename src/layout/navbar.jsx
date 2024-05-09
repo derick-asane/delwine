@@ -29,9 +29,9 @@ const Navbar = () => {
             {LinkElement.map((element) => (
               <li
                 key={element.id}
-                className={`border-8 ${
-                  indicate === element.id ? "border-b-[#4D4DFF]" : ""
-                } transform hover:scale-125`}
+                className={`border-2 ${
+                  indicate === element.id ? "md:border-b-[#4D4DFF]" : ""
+                } transform md:hover:scale-125`}
               >
                 <Link to={element.link} onClick={() => setIndicate(element.id)}>
                   {element.name}

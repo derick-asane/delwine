@@ -5,210 +5,224 @@
       "name": "Jonny Walker",
       "type": "Whisky",
       "price": "2500",
-      "status": 1
+      "status": 1,
+      "photo": "/src/assets/img/products/jonny-walker.jpeg"
     },
     {
       "id": 2,
       "name": "Glenfiddich",
       "type": "Whisky",
       "price": "2800",
-      "status": 0
+      "status": 0,
+      "photo": "/src/assets/img/products/Glenfiddich.jpeg"
     },
     {
       "id": 3,
       "name": "Chivas Regal",
       "type": "Whisky",
       "price": "3000",
-      "status": 1
+      "status": 1,
+      "photo": "/src/assets/img/products/chivas-regal.jpeg"
     },
     {
       "id": 4,
       "name": "Jack Daniel's",
       "type": "Whisky",
       "price": "2700",
-      "status": 0
+      "status": 0,
+      "photo": "/src/assets/img/products/jack-daniel's.jpeg"
     },
     {
       "id": 5,
       "name": "Jameson",
       "type": "Whisky",
       "price": "2600",
-      "status": 1
+      "status": 1,
+      "photo": "/src/assets/img/products/jameson.jpeg"
     },
     {
       "id": 6,
       "name": "Hennessy",
       "type": "Cognac",
       "price": "3200",
-      "status": 0
+      "status": 0,
+      "photo": "/src/assets/img/products/hennessy.jpeg"
     },
     {
       "id": 7,
       "name": "Dom Pérignon",
       "type": "Champagne",
       "price": "5000",
-      "status": 1
+      "status": 1,
+      "photo": "/src/assets/img/products/dom-perignon.jpeg"
     },
     {
       "id": 8,
       "name": "Moët & Chandon",
       "type": "Champagne",
       "price": "4800",
-      "status": 0
+      "status": 0,
+      "photo": "/src/assets/img/products/Moet-chandon.jpeg"
     },
     {
       "id": 9,
       "name": "Veuve Clicquot",
       "type": "Champagne",
       "price": "4500",
-      "status": 1
+      "status": 1,
+      "photo": "/src/assets/img/products/veuve-clicquot.jpeg"
     },
     {
       "id": 10,
       "name": "Laurent-Perrier",
       "type": "Champagne",
       "price": "4700",
-      "status": 0
+      "status": 0,
+      "photo": "/src/assets/img/products/laurent-perrier.jpeg"
     },
     {
       "id": 11,
       "name": "Merlot",
       "type": "Wine",
       "price": "1800",
-      "status": 1
+      "status": 1,
+      "photo": "/src/assets/img/products/merlot.jpeg"
     },
     {
       "id": 12,
       "name": "Cabernet Sauvignon",
       "type": "Wine",
       "price": "2000",
-      "status": 0
+      "status": 0,
+      "photo": "/src/assets/img/products/cabernet-sauvignon.jpeg"
     },
     {
       "id": 13,
       "name": "Pinot Noir",
       "type": "Wine",
       "price": "2200",
-      "status": 1
+      "status": 1,
+      "photo": "/src/assets/img/products/jonny-walker.jpeg"
     },
     {
       "id": 14,
       "name": "Chardonnay",
       "type": "Wine",
       "price": "2100",
-      "status": 0
+      "status": 0,
+      "photo": "/src/assets/img/products/Glenfiddich.jpeg"
     },
     {
       "id": 15,
       "name": "Sauvignon Blanc",
       "type": "Wine",
       "price": "1900",
-      "status": 1
+      "status": 1,
+      "photo": "/src/assets/img/products/chivas-regal.jpeg"
     },
     {
       "id": 16,
       "name": "Tequila",
       "type": "Spirit",
       "price": "2900",
-      "status": 0
+      "status": 0,
+      "photo": "/src/assets/img/products/jack-daniel's.jpeg"
     },
     {
       "id": 17,
       "name": "Vodka",
       "type": "Spirit",
       "price": "2700",
-      "status": 1
+      "status": 1,
+      "photo": "/src/assets/img/products/jameson.jpeg"
     },
     {
       "id": 18,
       "name": "Rum",
       "type": "Spirit",
       "price": "2600",
-      "status": 0
+      "status": 0,
+      "photo": "/src/assets/img/products/Glenfiddich.jpeg"
     },
     {
       "id": 19,
       "name": "Gin",
       "type": "Spirit",
       "price": "2500",
-      "status": 1
+      "status": 1,
+      "photo": "/src/assets/img/products/Glenfiddich.jpeg"
     },
     {
       "id": 20,
       "name": "Absinthe",
       "type": "Spirit",
       "price": "3100",
-      "status": 0
+      "status": 0,
+      "photo": "/src/assets/img/products/Glenfiddich.jpeg"
     },
     {
       "id": 21,
       "name": "Bourbon",
       "type": "Whisky",
       "price": "2800",
-      "status": 1
+      "status": 1,
+      "photo": "/src/assets/img/products/Glenfiddich.jpeg"
     },
     {
       "id": 22,
       "name": "Single Malt Scotch",
       "type": "Whisky",
       "price": "3000",
-      "status": 0
+      "status": 0,
+      "photo": "/src/assets/img/products/Glenfiddich.jpeg"
     },
     {
       "id": 23,
       "name": "Irish Whiskey",
       "type": "Whisky",
       "price": "2700",
-      "status": 1
+      "status": 1,
+      "photo": "/src/assets/img/products/Glenfiddich.jpeg"
     },
     {
       "id": 24,
       "name": "Canadian Whisky",
       "type": "Whisky",
       "price": "2600",
-      "status": 0
+      "status": 0,
+      "photo": "/src/assets/img/products/Glenfiddich.jpeg"
     },
     {
       "id": 25,
       "name": "Tennessee Whiskey",
       "type": "Whisky",
       "price": "2800",
-      "status": 1
+      "status": 1,
+      "photo": "/src/assets/img/products/Glenfiddich.jpeg"
     },
     {
       "id": 26,
       "name": "Scotch Whisky",
       "type": "Whisky",
       "price": "2900",
-      "status": 0
+      "status": 0,
+      "photo": "/src/assets/img/products/Glenfiddich.jpeg"
     },
     {
       "id": 27,
       "name": "Japanese Whisky",
       "type": "Whisky",
       "price": "3100",
-      "status": 1
+      "status": 1,
+      "photo": "/src/assets/img/products/Glenfiddich.jpeg"
     },
     {
       "id": 28,
       "name": "Australian Whisky",
       "type": "Whisky",
       "price": "3300",
-      "status": 0
-    },
-    {
-      "id": 29,
-      "name": "Indian Whisky",
-      "type": "Whisky",
-      "price": "3200",
-      "status": 1
-    },
-    {
-      "id": 30,
-      "name": "Swiss Whisky",
-      "type": "Whisky",
-      "price": "3100",
-      "status": 0
+      "status": 0,
+      "photo": "/src/assets/img/products/Glenfiddich.jpeg"
     }
   ]
 }
