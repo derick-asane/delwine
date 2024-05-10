@@ -20,6 +20,14 @@ const productService = {
       throw new Error("fail to fetch product");
     }
   },
+  createProduct: async (data) => {
+    try {
+      const response = await axios.post(`${API_URL}`, data);
+      return response.data;
+    } catch (error) {
+      throw new Error(error);
+    }
+  },
 };
 
 export default productService;

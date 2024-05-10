@@ -15,7 +15,6 @@ const Products = () => {
     const fetchProducts = async () => {
       try {
         const myProducts = await productService.getProducts();
-
         dispatch(getProducts(myProducts));
       } catch (error) {
         console.error("not found");
@@ -37,7 +36,6 @@ const Products = () => {
     } else {
       document.body.classList.remove("overflow-hidden");
     }
-    console.log(isFormOpen);
   }, [isFormOpen]);
 
   const openForm = () => {
@@ -51,14 +49,21 @@ const Products = () => {
   return (
     <div className="relative">
       <div className="w-full flex justify-center">
-        <h1 className="italic">List of drinks</h1>
+        <h1 className="italic font-bold smm:text-[20px] sm:text-[30px] ">
+          List of drinks
+        </h1>
       </div>
       <div className="flex w-full items-center ">
-        <div className="w-3/4 flex justify-end">
+        <div className="w-full sm:w-3/4 flex justify-center sm:justify-end">
           <SearchBar setSearchTerm={setSearchTerm} searchTerm={searchTerm} />
         </div>
-        <div className="w-1/4 flex justify-end mr-4">
-          <button onClick={openForm}>Add Product</button>
+        <div className="w-1/2 sm:w-1/4 flex justify-end mr-4 items-center">
+          <button
+            onClick={openForm}
+            className="smm:text-[12px] sm:text-[15px] md:text-[20px]"
+          >
+            Add Product
+          </button>
         </div>
       </div>
 
@@ -72,7 +77,7 @@ const Products = () => {
               <img
                 src={product.photo}
                 alt=""
-                className="w-full h-[100px] md:h-[100px] xl:h-[250px]"
+                className="w-full h-[100px] md:h-[100px] xl:h-[250px] rounded-md"
               />
               <div className=" w-full flex justify-evenly items-center gap-4 mt-4">
                 <h3 className="text-xs md:text-lg font-semibold">

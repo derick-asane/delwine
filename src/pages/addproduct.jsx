@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { object } from "yup";
+
+import productService from "../services/productService";
 
 const AddProduct = ({ closeForm }) => {
   const {
@@ -9,8 +9,22 @@ const AddProduct = ({ closeForm }) => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (data) => {
+    const product = {
+      id: 30,
+      name: data.name,
+      type: data.type,
+      price: data.price,
+      status: 1,
+      photo: data.photo[0].name,
+    };
+    console.log(product);
+    try {
+      const createdProduct = await productService.createProduct(product);
+      console.log(createdProduct);
+    } catch (error) {
+      throw new Error(error);
+    }
   };
   return (
     <form
@@ -64,6 +78,7 @@ const AddProduct = ({ closeForm }) => {
           <option value="whisky">whisky</option>
           <option value="wine">wine</option>
           <option value="champagne">champagne</option>
+          <option value="juice">juice</option>
         </select>
         {errors.type && (
           <span className="text-red-800">This field is required !!!</span>

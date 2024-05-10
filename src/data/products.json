@@ -223,6 +223,14 @@
       "price": "3300",
       "status": 0,
       "photo": "/src/assets/img/products/Glenfiddich.jpeg"
+    },
+    {
+      "id": 32,
+      "name": "malta",
+      "type": "wine",
+      "price": "750",
+      "status": 1,
+      "photo": "Brown and Yellow Simple Illustrative Studying Tips YouTube Thumbnail (6).png"
     }
   ]
 }

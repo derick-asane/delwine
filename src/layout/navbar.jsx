@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   const [burger, setBurger] = useState(false);
   const [indicate, setIndicate] = useState(1);
+  const [closeBurger, setCloseBurger] = useState();
 
   let LinkElement = [
     { id: 1, name: "Home", link: "/" },
