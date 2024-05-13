@@ -57,10 +57,10 @@ const Products = () => {
         <div className="w-full sm:w-3/4 flex justify-center sm:justify-end">
           <SearchBar setSearchTerm={setSearchTerm} searchTerm={searchTerm} />
         </div>
-        <div className="w-1/2 sm:w-1/4 flex justify-end mr-4 items-center">
+        <div className="w-1/4 flex justify-end mr-4 ">
           <button
+            className="smm:text-sm sm:text-lg smm:leading-none sm:leading-normal"
             onClick={openForm}
-            className="smm:text-[12px] sm:text-[15px] md:text-[20px]"
           >
             Add Product
           </button>
