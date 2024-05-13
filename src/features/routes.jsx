@@ -6,6 +6,7 @@ import Layout from "../layout/layout";
 import ErrorPage from "./error-page";
 import Service from "../pages/services";
 import ContactUs from "../layout/contact-us";
+import Login from "./login";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
       { path: "products", element: <Products /> },
       { path: "contact", element: <ContactUs /> },
       { path: "about-us", element: <AboutUs /> },
+      { path: "login", element: <Login /> },
     ],
   },
 ]);

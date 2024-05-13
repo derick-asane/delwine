@@ -7,15 +7,18 @@ import { RouterProvider } from "react-router-dom";
 import { store } from "./app/store.js";
 import { Provider } from "react-redux";
 import { IndicateTabProvider } from "./context/indicateTabContext.jsx";
+import { UserProvider } from "./context/userContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Provider store={store}>
-      <IndicateTabProvider>
-        <RouterProvider router={router}>
-          <App />
-        </RouterProvider>
-      </IndicateTabProvider>
+      <UserProvider>
+        <IndicateTabProvider>
+          <RouterProvider router={router}>
+            <App />
+          </RouterProvider>
+        </IndicateTabProvider>
+      </UserProvider>
     </Provider>
   </React.StrictMode>
 );

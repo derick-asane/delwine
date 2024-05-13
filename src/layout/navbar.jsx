@@ -96,7 +96,9 @@ const Navbar = () => {
           </svg>
         )}
         <div className="w-[10%] flex justify-start">
-          <button className="h-8 px-4 text-sm leading-none">Login</button>
+          <Link to={"login"}>
+            <button className="h-8 px-4 text-sm leading-none">Login</button>
+          </Link>
         </div>
       </div>
     </div>
