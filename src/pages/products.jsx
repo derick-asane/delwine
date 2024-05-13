@@ -57,8 +57,13 @@ const Products = () => {
         <div className="w-3/4 flex justify-end">
           <SearchBar setSearchTerm={setSearchTerm} searchTerm={searchTerm} />
         </div>
-        <div className="w-1/4 flex justify-end mr-4">
-          <button onClick={openForm}>Add Product</button>
+        <div className="w-1/4 flex justify-end mr-4 ">
+          <button
+            className="smm:text-sm sm:text-lg smm:leading-none sm:leading-normal"
+            onClick={openForm}
+          >
+            Add Product
+          </button>
         </div>
       </div>
 

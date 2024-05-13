@@ -3,8 +3,8 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import "./index.css";
-import Navbar from "./layout/navbar";
 import Layout from "./layout/layout";
+import { IndicateTabContext } from "./context/indicateTabContent";
 
 function App() {
   return (
