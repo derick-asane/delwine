@@ -15,7 +15,7 @@ const Navbar = () => {
     { id: 5, name: "About-us", link: "about-us" },
   ];
   return (
-    <div className="bg-gray-200 md:h-[50px] pl-2 fixed w-full z-10 top-0 left-0 flex flex-col md:flex-row md:pl-0  md:justify-between md:items-center shadow-2xl">
+    <div className="bg-gray-200 md:h-[50px] pl-2 fixed w-full z-40 top-0 left-0 flex flex-col md:flex-row md:pl-0  md:justify-between md:items-center shadow-2xl ">
       <div className="w-[10%] my-3  flex justify-center items-center">
         <img src="" alt="Logo" />
       </div>
@@ -35,7 +35,13 @@ const Navbar = () => {
                 indicate === element.id ? "md:border-b-[#4D4DFF]" : ""
               } transform md:hover:scale-125 `}
             >
-              <Link to={element.link} onClick={() => setIndicate(element.id)}>
+              <Link
+                to={element.link}
+                onClick={() => {
+                  setIndicate(element.id);
+                  setBurger(!burger);
+                }}
+              >
                 {element.name}
               </Link>
             </li>
