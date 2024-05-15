@@ -28,6 +28,22 @@ const productService = {
       throw new Error(error);
     }
   },
+  deleteProduct: async (id) => {
+    try {
+      const response = await axios.delete(`${API_URL}/${id}`);
+      return response;
+    } catch (error) {
+      throw new Error(error);
+    }
+  },
+  modifyProduct: async (productId, data) => {
+    try {
+      const response = await axios.put(`${API_URL}/${productId}`, data);
+      return response;
+    } catch (error) {
+      throw new Error(error);
+    }
+  },
 };
 
 export default productService;

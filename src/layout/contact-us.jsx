@@ -2,7 +2,7 @@ import contact from "/src/assets/img/contact-us-animate.svg";
 
 const ContactUs = () => {
   return (
-    <div className=" md:h-screen w-full lg:w-[] flex gap-1 flex-col-reverse justify-around md:gap-0 md:flex-row md:justify-around items-center">
+    <div className=" md:h-screen w-full  flex gap-1 flex-col-reverse justify-around md:gap-0 md:flex-row md:justify-around items-center lg:w-[70%] lg:mx-auto">
       <div className=" w-[80%]  md:w-[40%] lg:w-[60%] h-full flex flex-col justify-center  gap-4 mb-2 md:mb-0 ">
         <div className="flex rounded-lg bg-slate-400 justify-evenly items-center shadow-slate-600">
           <div className="w-[20%] md:w-[20%] lg:w-[20%] flex justify-center">

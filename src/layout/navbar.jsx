@@ -1,10 +1,12 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { IndicateContext } from "../context/indicateTabContext";
+import { UserContext } from "../context/userContext";
 
 const Navbar = () => {
   const [burger, setBurger] = useState(false);
   const { indicate, setIndicate } = useContext(IndicateContext);
+  const { state, dispatch } = useContext(UserContext);
   console.log(indicate);
 
   let LinkElement = [
@@ -101,11 +103,20 @@ const Navbar = () => {
             />
           </svg>
         )}
-        <div className="w-[10%] flex justify-start">
-          <Link to={"login"}>
-            <button className="h-8 px-4 text-sm leading-none">Login</button>
-          </Link>
-        </div>
+        {state.user.length == 0 ? (
+          <div className="w-[10%] flex justify-start">
+            <Link to={"login"}>
+              <button className="h-8 px-4 text-sm leading-none">Login</button>
+            </Link>
+          </div>
+        ) : (
+          <button
+            onClick={() => dispatch({ type: "logout" })}
+            className="h-8 px-3 text-sm leading-none"
+          >
+            logout
+          </button>
+        )}
       </div>
     </div>
   );

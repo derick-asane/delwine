@@ -1,11 +1,13 @@
 import { useForm } from "react-hook-form";
 import { UserContext } from "../context/userContext";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import userSevice from "../services/userService";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const { register, handleSubmit } = useForm();
   const { state, dispatch } = useContext(UserContext);
+  const navigate = useNavigate();
 
   const onSubmit = async (data) => {
     console.log(data);
@@ -17,6 +19,12 @@ const Login = () => {
       throw new Error(error);
     }
   };
+
+  useEffect(() => {
+    if (state.user.length !== 0) {
+      navigate("/products");
+    }
+  }, [state.user, navigate]);
   return (
     <div className="lg:h-screen flex justify-center items-center">
       <div className="w-[70%] bg-white p-4 mt-[10%] mb-6 shadow-slate-500 rounded-sm lg:w-[40%]">

@@ -4,22 +4,30 @@ import SearchBar from "../components/searchbar";
 import { getProducts } from "../app/productSlice";
 import { useDispatch, useSelector } from "react-redux";
 import AddProduct from "./addproduct";
+import ModifyProduct from "./modifyproduct";
 
 const Products = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [isFormOpen, SetIsFormOpen] = useState(false);
+  const [isModifyProductFormOpen, SetIsModifyProductFormOpen] = useState(false);
+  const [showCrud, setShowCrud] = useState(false);
+  const [idProduct, setIdProduct] = useState(null);
+  const [modifyProductData, setModifyProductData] = useState(null);
 
   const dispatch = useDispatch();
 
+  //this function is used to get the products from my endpoint
+  const fetchProducts = async () => {
+    try {
+      const myProducts = await productService.getProducts();
+      dispatch(getProducts(myProducts));
+    } catch (error) {
+      console.error("not found");
+    }
+  };
+
+  //this useEffect is to call the function when the page first loads
   useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const myProducts = await productService.getProducts();
-        dispatch(getProducts(myProducts));
-      } catch (error) {
-        console.error("not found");
-      }
-    };
     fetchProducts();
   }, []);
 
@@ -30,6 +38,7 @@ const Products = () => {
     product.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  //this useEffect helps us to hide the scroll bar once the user clicks on the addProduct page
   useEffect(() => {
     if (isFormOpen) {
       document.body.classList.add("overflow-hidden");
@@ -44,6 +53,26 @@ const Products = () => {
 
   const closeForm = () => {
     SetIsFormOpen(false);
+  };
+
+  const deleteProduct = async (id) => {
+    try {
+      const response = await productService.deleteProduct(id);
+      console.log(response.data);
+      fetchProducts();
+    } catch (error) {
+      throw new Error(error);
+    }
+  };
+
+  const modifyProduct = async (id, data) => {
+    try {
+      const response = await productService.modifyProduct(id, data);
+      console.log(response.data);
+      fetchProducts();
+    } catch (error) {
+      throw new Error(error);
+    }
   };
 
   return (
@@ -71,14 +100,43 @@ const Products = () => {
         {filteredProducts.map((product) => (
           <div
             key={product.id}
-            className="w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/4 px-4 mb-8"
+            className="w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/4 px-4 mb-8 "
           >
-            <div className="border border-gray-300 rounded-md p-4">
-              <img
-                src={product.photo}
-                alt=""
-                className="w-full h-[100px] md:h-[100px] xl:h-[250px] rounded-md"
-              />
+            <div className="border border-gray-300 rounded-md p-4 ">
+              <div
+                className="relative "
+                onClick={() => {
+                  setIdProduct(product.id);
+                  setShowCrud(!showCrud);
+                }}
+              >
+                {showCrud && product.id === idProduct && (
+                  <div className="absolute h-full w-full flex flex-col gap-3 justify-center items-center inset-0 ">
+                    <div
+                      className="w-[60%] bg-green-500 flex justify-center text-white rounded-lg hover:cursor-pointer"
+                      onClick={() => {
+                        setModifyProductData(() => product);
+                        openForm();
+                      }}
+                    >
+                      <span>modify</span>
+                    </div>
+                    <div
+                      className="w-[60%] bg-red-700 flex justify-center text-white rounded-lg hover:cursor-pointer"
+                      onClick={() => {
+                        deleteProduct(product.id);
+                      }}
+                    >
+                      <span>delete</span>
+                    </div>
+                  </div>
+                )}
+                <img
+                  src={product.photo}
+                  alt={product.name}
+                  className="w-full h-[100px] md:h-[100px] xl:h-[250px] rounded-md"
+                />
+              </div>
               <div className=" w-full flex justify-evenly items-center gap-4 mt-4">
                 <h3 className="text-xs md:text-lg font-semibold">
                   {product.name}
@@ -94,6 +152,14 @@ const Products = () => {
       {isFormOpen && (
         <div className="absolute top-0 left-0 w-screen h-screen flex justify-center items-center bg-slate-100 bg-opacity-50">
           <AddProduct closeForm={closeForm} />
+        </div>
+      )}
+      {isFormOpen && (
+        <div className="absolute top-0 left-0 w-screen h-screen flex justify-center items-center bg-slate-100 bg-opacity-50">
+          <ModifyProduct
+            isModifyProductFormOpen={isModifyProductFormOpen}
+            modifyProductData={modifyProductData}
+          />
         </div>
       )}
     </div>
