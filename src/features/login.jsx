@@ -13,7 +13,7 @@ const Login = () => {
     console.log(data);
     try {
       const user = await userSevice.getUser(data);
-      dispatch({ type: "getUser", payload: user });
+      dispatch({ type: "login", payload: user });
       console.log(state.user);
     } catch (error) {
       throw new Error(error);

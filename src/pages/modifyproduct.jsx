@@ -1,26 +1,39 @@
 import { useForm } from "react-hook-form";
-
+import { useEffect } from "react";
 import productService from "../services/productService";
 
-const ModifyProduct = ({ isModifyProductFormOpen, modifyProductData }) => {
+const ModifyProduct = ({
+  isModifyProductFormOpen,
+  setIsModifyProductFormOpen,
+  modifyProductData,
+}) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    defaultValues: {
+      name: modifyProductData?.name || "name",
+      type: modifyProductData?.type || "type",
+      price: modifyProductData?.price || "price",
+      photo: modifyProductData?.photo || "photo",
+    },
+  });
 
   const onSubmit = async (data) => {
     const product = {
-      id: 30,
+      id: modifyProductData.id,
       name: data.name,
       type: data.type,
       price: data.price,
-      status: 1,
-      photo: data.photo[0].name,
+      photo: data.photo ? data.photo : modifyProductData.photo,
     };
     console.log(product);
     try {
-      const createdProduct = await productService.createProduct(product);
+      const createdProduct = await productService.modifyProduct(
+        product.id,
+        product
+      );
       console.log(createdProduct);
     } catch (error) {
       throw new Error(error);
@@ -29,9 +42,12 @@ const ModifyProduct = ({ isModifyProductFormOpen, modifyProductData }) => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="w-3/5 md:w-2/5 mx-auto border border-gray-600 rounded-md p-4 shadow-2xl bg-slate-200 relative z-20"
+      className="w-3/5 md:w-2/5 mx-auto border border-gray-600 rounded-md p-4 shadow-2xl bg-slate-200 relative  z-50"
     >
-      <div className="absolute right-0 mr-4" onClick={isModifyProductFormOpen}>
+      <div
+        className="absolute right-0 mr-4"
+        onClick={() => setIsModifyProductFormOpen(!isModifyProductFormOpen)}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -107,7 +123,7 @@ const ModifyProduct = ({ isModifyProductFormOpen, modifyProductData }) => {
           type="file"
           name="photo"
           id="photo"
-          {...register("photo", { required: true })}
+          {...register("photo")}
           className="border border-gray-300 py-2 rounded-md w-full"
         />
         {errors.photo && (

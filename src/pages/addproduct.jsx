@@ -29,7 +29,7 @@ const AddProduct = ({ closeForm }) => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="w-3/5 md:w-2/5 mx-auto border border-gray-600 rounded-md p-4 shadow-2xl bg-slate-200 relative z-20"
+      className="w-3/5 md:w-2/5 mx-auto border border-gray-600 rounded-md p-4 shadow-2xl bg-slate-200 relative  z-50"
     >
       <div className="absolute right-0 mr-4" onClick={closeForm}>
         <svg
