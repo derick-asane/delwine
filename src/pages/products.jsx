@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import productService from "../services/productService";
 import SearchBar from "../components/searchbar";
 import { getProducts } from "../app/productSlice";
@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import AddProduct from "./addproduct";
 import ModifyProduct from "./modifyproduct";
 import NotificationPop from "../components/notification-pop";
+import { UserContext } from "../context/userContext";
 
 const Products = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -17,14 +18,15 @@ const Products = () => {
   const [isNotificationVisible, setIsNotificationVisible] = useState(false);
   const [notificationMessage, SetNotificationMessage] = useState("");
   const [notificationType, SetNotificationType] = useState(true);
+  const { state, dispatch } = useContext(UserContext);
 
-  const dispatch = useDispatch();
+  const dispatche = useDispatch();
 
   //this function is used to get the products from my endpoint
   const fetchProducts = async () => {
     try {
       const myProducts = await productService.getProducts();
-      dispatch(getProducts(myProducts));
+      dispatche(getProducts(myProducts));
     } catch (error) {
       console.error("not found");
     }
@@ -42,7 +44,6 @@ const Products = () => {
   }, [isModifyProductFormOpen]);
 
   const products = useSelector((state) => state.product.products);
-  console.log(products);
 
   const filteredProducts = products.filter((product) =>
     product.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -151,27 +152,29 @@ const Products = () => {
                     setShowCrud(!showCrud);
                   }}
                 >
-                  {showCrud && product.id === idProduct && (
-                    <div className="absolute h-full w-full flex flex-col gap-3 justify-center items-center inset-0 ">
-                      <div
-                        className="w-[60%] bg-green-500 flex justify-center text-white rounded-lg hover:cursor-pointer lg:w-[50%] lg:p-4"
-                        onClick={() => {
-                          setModifyProductData(product);
-                          openModifyProductForm();
-                        }}
-                      >
-                        <span>modify</span>
+                  {state.user.length === 1 &&
+                    showCrud &&
+                    product.id === idProduct && (
+                      <div className="absolute h-full w-full flex flex-col gap-3 justify-center items-center inset-0 ">
+                        <div
+                          className="w-[60%] bg-green-500 flex justify-center text-white rounded-lg hover:cursor-pointer lg:w-[50%] lg:p-4"
+                          onClick={() => {
+                            setModifyProductData(product);
+                            openModifyProductForm();
+                          }}
+                        >
+                          <span>modify</span>
+                        </div>
+                        <div
+                          className="w-[60%] bg-red-700 flex justify-center text-white rounded-lg hover:cursor-pointer lg:w-[50%] lg:p-4"
+                          onClick={() => {
+                            deleteProduct(product.id);
+                          }}
+                        >
+                          <span>delete</span>
+                        </div>
                       </div>
-                      <div
-                        className="w-[60%] bg-red-700 flex justify-center text-white rounded-lg hover:cursor-pointer lg:w-[50%] lg:p-4"
-                        onClick={() => {
-                          deleteProduct(product.id);
-                        }}
-                      >
-                        <span>delete</span>
-                      </div>
-                    </div>
-                  )}
+                    )}
                   <img
                     src={product.photo}
                     alt={product.name}

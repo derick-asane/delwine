@@ -33,10 +33,75 @@
     },
     {
       "id": "14",
-      "name": "Laurent-Perrier",
-      "type": "wine",
-      "price": "2100",
-      "photo": "/src/assets/img/products/laurent-perrier.jpeg"
+      "name": "Pinot Noir",
+      "type": "Wine",
+      "price": "2200",
+      "status": 1,
+      "photo": "/src/assets/img/products/jonny-walker.jpeg"
+    },
+    {
+      "id": "15",
+      "name": "Pinot Noir",
+      "type": "Wine",
+      "price": "2200",
+      "status": 1,
+      "photo": "/src/assets/img/products/jonny-walker.jpeg"
+    },
+    {
+      "id": "16",
+      "name": "Pinot Noir",
+      "type": "Wine",
+      "price": "2200",
+      "status": 1,
+      "photo": "/src/assets/img/products/jonny-walker.jpeg"
+    },
+    {
+      "id": "17",
+      "name": "Pinot Noir",
+      "type": "Wine",
+      "price": "2200",
+      "status": 1,
+      "photo": "/src/assets/img/products/jonny-walker.jpeg"
+    },
+    {
+      "id": "18",
+      "name": "Pinot Noir",
+      "type": "Wine",
+      "price": "2200",
+      "status": 1,
+      "photo": "/src/assets/img/products/jonny-walker.jpeg"
+    },
+    {
+      "id": "19",
+      "name": "Pinot Noir",
+      "type": "Wine",
+      "price": "2200",
+      "status": 1,
+      "photo": "/src/assets/img/products/jonny-walker.jpeg"
+    },
+    {
+      "id": "20",
+      "name": "Pinot Noir",
+      "type": "Wine",
+      "price": "2200",
+      "status": 1,
+      "photo": "/src/assets/img/products/jonny-walker.jpeg"
+    },
+    {
+      "id": "21",
+      "name": "Pinot Noir",
+      "type": "Wine",
+      "price": "2200",
+      "status": 1,
+      "photo": "/src/assets/img/products/jonny-walker.jpeg"
+    },
+    {
+      "id": "22",
+      "name": "Pinot Noir",
+      "type": "Wine",
+      "price": "2200",
+      "status": 1,
+      "photo": "/src/assets/img/products/jonny-walker.jpeg"
     }
   ]
 }

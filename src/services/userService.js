@@ -8,7 +8,6 @@ const userSevice = {
       const user = response.data.filter(
         (items) => items.password === data.password
       );
-
       return user;
     } catch (error) {
       console.log("user not found");

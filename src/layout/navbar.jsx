@@ -7,7 +7,6 @@ const Navbar = () => {
   const [burger, setBurger] = useState(false);
   const { indicate, setIndicate } = useContext(IndicateContext);
   const { state, dispatch } = useContext(UserContext);
-  console.log(indicate);
 
   let LinkElement = [
     { id: 1, name: "Home", link: "/" },

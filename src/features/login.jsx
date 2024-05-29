@@ -3,10 +3,12 @@ import { UserContext } from "../context/userContext";
 import { useContext, useEffect } from "react";
 import userSevice from "../services/userService";
 import { useNavigate } from "react-router-dom";
+import { IndicateContext } from "../context/indicateTabContext";
 
 const Login = () => {
   const { register, handleSubmit } = useForm();
   const { state, dispatch } = useContext(UserContext);
+  const { indicate, setIndicate } = useContext(IndicateContext);
   const navigate = useNavigate();
 
   const onSubmit = async (data) => {
@@ -14,7 +16,6 @@ const Login = () => {
     try {
       const user = await userSevice.getUser(data);
       dispatch({ type: "login", payload: user });
-      console.log(state.user);
     } catch (error) {
       throw new Error(error);
     }
@@ -23,8 +24,10 @@ const Login = () => {
   useEffect(() => {
     if (state.user.length !== 0) {
       navigate("/products");
+      console.log(state.user);
+      setIndicate(3);
     }
-  }, [state.user, navigate]);
+  }, [state.user, setIndicate, navigate]);
   return (
     <div className="lg:h-screen flex justify-center items-center">
       <div className="w-[70%] bg-white p-4 mt-[10%] mb-6 shadow-slate-500 rounded-sm lg:w-[40%]">
