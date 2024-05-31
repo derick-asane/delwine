@@ -94,14 +94,6 @@
       "price": "2200",
       "status": 1,
       "photo": "/src/assets/img/products/jonny-walker.jpeg"
-    },
-    {
-      "id": "22",
-      "name": "Pinot Noir",
-      "type": "Wine",
-      "price": "2200",
-      "status": 1,
-      "photo": "/src/assets/img/products/jonny-walker.jpeg"
     }
   ]
 }

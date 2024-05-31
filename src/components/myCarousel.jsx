@@ -7,27 +7,27 @@ const MyCarousel = () => {
     {
       id: 1,
       url: "/src/assets/img/products/p1.jpeg",
-      title: "inner view",
+      title: "Inner view",
     },
     {
       id: 2,
       url: "/src/assets/img/products/p2.jpeg",
-      title: "side view",
+      title: "Side view",
     },
     {
       id: 3,
       url: "/src/assets/img/products/p3.jpeg",
-      title: "outer view",
+      title: "Outer view",
     },
     {
       id: 4,
       url: "/src/assets/img/products/p4.jpeg",
-      title: "inner view",
+      title: "Inner view",
     },
     {
       id: 5,
       url: "/src/assets/img/products/p5.jpeg",
-      title: "outer view",
+      title: "Outer view",
     },
   ];
 
@@ -43,27 +43,27 @@ const MyCarousel = () => {
   };
 
   return (
-    <div className="w-full h-full sm:h-0 bg-slate-300 mb-2 rounded-md">
-      <div className="w-[100%] flex justify-center mt-2 relative">
+    <div className="w-full h-full md:h-fit mb-2 rounded-md">
+      <div className="w-[100%] flex justify-center mt-2 relative md:h-full">
         <img
           src={slides[currentSlide].url}
           alt=""
-          className=" w-[90%] rounded-md h-[280px]"
+          className=" w-[100%] md:w-[90%] rounded-md h-[280px] md:h-[600px]"
         />
         <div
-          className="absolute left-8 transform -translate-x-1/2 top-1/2 bg-slate-300 hover:cursor-pointer text-2xl"
+          className="absolute left-8 transform -translate-x-1/2 top-1/2 bg-white hover:cursor-pointer text-2xl border-4 border-gray-800"
           onClick={() => goBackward()}
         >
           &lt;
         </div>
         <div
-          className="absolute right-8 transform translate-x-1/2 top-1/2 bg-slate-300  hover:cursor-pointer text-2xl"
+          className="absolute right-8 transform translate-x-1/2 top-1/2 bg-white hover:cursor-pointer text-2xl  border-4 border-gray-800"
           onClick={() => goForward()}
         >
           &gt;
         </div>
       </div>
-      <div className="w-[100%] flex justify-center">
+      <div className="w-[100%] flex justify-center md:text-[50px]">
         <span>{slides[currentSlide].title}</span>
       </div>
     </div>
