@@ -4,7 +4,7 @@ import Navbar from "./navbar";
 
 const Layout = () => {
   return (
-    <div className="w-screen">
+    <div className="w-full">
       <Navbar />
       <MainContent />
       <Footer />

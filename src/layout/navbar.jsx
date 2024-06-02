@@ -1,12 +1,15 @@
 import { useContext, useState } from "react";
+import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 import { IndicateContext } from "../context/indicateTabContext";
 import { UserContext } from "../context/userContext";
+import Login from "../features/login";
 
 const Navbar = () => {
   const [burger, setBurger] = useState(false);
   const { indicate, setIndicate } = useContext(IndicateContext);
   const { state, dispatch } = useContext(UserContext);
+  const [openLogin, setOpenLogin] = useState(false);
 
   let LinkElement = [
     { id: 1, name: "Home", link: "/" },
@@ -18,7 +21,7 @@ const Navbar = () => {
   return (
     <div className="bg-gray-200 md:h-[50px] pl-2 fixed w-full z-40 top-0 left-0 flex flex-col md:flex-row md:pl-0  md:justify-between md:items-center shadow-2xl ">
       <div className="w-[10%] my-3  flex justify-center items-center">
-        <img src="" alt="Logo" />
+        <img src="" alt="Delwine" />
       </div>
 
       <div
@@ -104,9 +107,12 @@ const Navbar = () => {
         )}
         {state.user.length == 0 ? (
           <div className="w-[10%] flex justify-start">
-            <Link to={"login"}>
-              <button className="h-8 px-4 text-sm leading-none">Login</button>
-            </Link>
+            <button
+              className="h-8 px-4 text-sm leading-none"
+              onClick={() => setOpenLogin((preState) => !preState)}
+            >
+              Login
+            </button>
           </div>
         ) : (
           <button
@@ -116,6 +122,8 @@ const Navbar = () => {
             logout
           </button>
         )}
+        {openLogin &&
+          createPortal(<Login />, document.getElementById("modal-login-root"))}
       </div>
     </div>
   );

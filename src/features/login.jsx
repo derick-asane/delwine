@@ -29,8 +29,8 @@ const Login = () => {
     }
   }, [state.user, setIndicate, navigate]);
   return (
-    <div className="lg:h-screen flex justify-center items-center">
-      <div className="w-[70%] bg-white p-4 mt-[10%] mb-6 shadow-slate-500 rounded-sm lg:w-[40%]">
+    <div className="lg:h-screen fixed inset-0 flex justify-center items-center bg-gray-100 bg-opacity-75">
+      <div className=" w-[70%] bg-white p-4 shadow-slate-500 rounded-sm lg:w-[40%] z-30">
         <div className="w-full flex justify-center">
           <h1 className="font-bold font-sm my-8">Login</h1>
         </div>
