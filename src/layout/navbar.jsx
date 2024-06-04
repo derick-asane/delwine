@@ -123,7 +123,10 @@ const Navbar = () => {
           </button>
         )}
         {openLogin &&
-          createPortal(<Login />, document.getElementById("modal-login-root"))}
+          createPortal(
+            <Login setOpenLogin={setOpenLogin} />,
+            document.getElementById("modal-login-root")
+          )}
       </div>
     </div>
   );
