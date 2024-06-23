@@ -1,0 +1,37 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer utilities {
+  .app__service {
+    @apply flex flex-col justify-between lg:flex-row-reverse lg:justify-around lg:w-[100%] lg:items-center;
+  }
+
+  .app__service-img {
+    @apply w-[100%] flex justify-center lg:justify-start;
+  }
+  .app__service-img img {
+    @apply w-[300px];
+  }
+  .app__service-heading {
+    @apply w-[100%] text-center text-3xl lg:text-6xl lg:mb-12;
+  }
+  .app__service-heading h1 {
+    @apply text-[var(--color-golden)] font-[var(--font-base)] tracking-wide;
+  }
+  .app__service-item {
+    @apply flex justify-between items-center my-4 lg:w-[550px];
+  }
+  .app__service-item div {
+    @apply flex items-center gap-1;
+  }
+  .app__service-item span {
+    @apply text-xl lg:text-3xl;
+  }
+  .app__service-item p {
+    @apply bg-slate-400 py-1 px-2 border rounded-lg;
+  }
+  .app__service-ourservice {
+    @apply lg:w-[600px] lg:space-y-24;
+  }
+}

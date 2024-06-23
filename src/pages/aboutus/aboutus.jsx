@@ -1,5 +1,5 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import MyCarousel from "../components/myCarousel";
+import MyCarousel from "./../../components/myCarousel";
 
 const AboutUs = () => {
   return (

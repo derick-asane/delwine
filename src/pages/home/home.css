@@ -1,0 +1,24 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer utilities {
+  .app__home {
+    @apply flex flex-col justify-between items-center lg:flex-row;
+  }
+  .app__home-img {
+    @apply w-[60%] lg:w-[40%] lg:h-[40%];
+  }
+  .app__home-img img {
+    @apply w-[100%];
+  }
+  .app__home-text {
+    @apply flex-1;
+  }
+  .app__home-text h1 {
+    @apply mb-4 text-4xl font-bold md:text-5xl;
+  }
+  .app__home-text span {
+    @apply text-xl font-sans md:text-2xl lg:text-3xl xl:text-4xl;
+  }
+}

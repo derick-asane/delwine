@@ -13,10 +13,8 @@ const Navbar = () => {
 
   let LinkElement = [
     { id: 1, name: "Home", link: "/" },
-    { id: 2, name: "Services", link: "service" },
-    { id: 3, name: "Product", link: "products" },
-    { id: 4, name: "Contact-us", link: "contact" },
-    { id: 5, name: "About-us", link: "about-us" },
+    { id: 2, name: "Product", link: "products" },
+    { id: 3, name: "About-us", link: "about-us" },
   ];
   return (
     <div className="bg-gray-200 md:h-[50px] pl-2 fixed w-full z-40 top-0 left-0 flex flex-col md:flex-row md:pl-0  md:justify-between md:items-center shadow-2xl ">
