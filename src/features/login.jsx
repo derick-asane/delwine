@@ -5,7 +5,7 @@ import userSevice from "../services/userService";
 import { useNavigate } from "react-router-dom";
 import { IndicateContext } from "../context/indicateTabContext";
 
-const Login = () => {
+const Login = ({ setOpenLogin }) => {
   const { register, handleSubmit } = useForm();
   const { state, dispatch } = useContext(UserContext);
   const { indicate, setIndicate } = useContext(IndicateContext);
@@ -16,6 +16,7 @@ const Login = () => {
     try {
       const user = await userSevice.getUser(data);
       dispatch({ type: "login", payload: user });
+      setOpenLogin((prevState) => !prevState);
     } catch (error) {
       throw new Error(error);
     }

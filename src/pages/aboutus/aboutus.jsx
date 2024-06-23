@@ -3,8 +3,8 @@ import MyCarousel from "./../../components/myCarousel";
 
 const AboutUs = () => {
   return (
-    <div className="md:flex md:h-[800px] w-full">
-      <div className="h-[350px] w-full md:w-[50%] md:h-[600px]">
+    <div className="md:flex md:h-[700px] w-full">
+      <div className="h-[350px] w-full md:w-[50%] md:h-[700px]">
         <MapContainer
           center={[3.8210699716886722, 11.472088012740802]}
           zoom={13}

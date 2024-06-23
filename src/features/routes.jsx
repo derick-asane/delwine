@@ -4,8 +4,7 @@ import Products from "../pages/products";
 import AboutUs from "../pages/aboutus/aboutus";
 import Layout from "../layout/layout";
 import ErrorPage from "./error-page";
-import Service from "../pages/services/services";
-import ContactUs from "../layout/contact-us";
+
 const router = createBrowserRouter([
   {
     path: "/",
